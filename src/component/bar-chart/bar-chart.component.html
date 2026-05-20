@@ -1,0 +1,11 @@
+<div class="bar-chart" [class.sorted]="chart.sorted" [style.width.px]="chartWidth()">
+	<div class="timer" [class.show]="chart.sorted && upgrades.getChartTimer() > 2e3">
+		<div [class]="['timer-bar', chart.sorted ? `show-${timer_bar_speed}` : 'dont-show']"></div>
+	</div>
+	<button class="bar" *ngFor="let bar of chart.bars"
+		[style.left.px]="barLeft(bar)" 
+		[style.width.px]="barWidth()"
+		[style.height.px]="bar.height * 300"
+		(click)="clickBar(bar)">
+	</button>
+</div>

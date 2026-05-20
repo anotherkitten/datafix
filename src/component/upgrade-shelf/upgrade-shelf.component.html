@@ -1,0 +1,16 @@
+<div class="upgrade-shelf">
+	<div *ngFor="let upgrade of upgrade_service.getUpgrades()" 
+		[class]="['upgrade', canBuy(upgrade) ? 'can-buy' : 'cant-buy']">
+		<img class="upgrade-icon" [src]="`assets/upgrade-icons/${upgrade.id}.png`">
+		<button class="upgrade-button" (click)="game.purchaseUpgrade(upgrade.id)"></button>
+		<div class="upgrade-tooltip-box">
+			<div class="header">
+				<div class="name">{{upgrade.name}} ({{upgrade_service.upgradeLevel(upgrade.id)}}/{{upgrade.level_limit}})</div>
+				<div class="cost">{{upgrade.atLimit(upgrade_service.upgradeLevel(upgrade.id)) ? '--' : upgrade.cost(upgrade_service.upgradeLevel(upgrade.id))}}$</div>
+			</div>
+			<div class="description">
+				<div class="cost">{{upgrade.desc(upgrade_service.upgradeLevel(upgrade.id))}}</div>
+			</div>
+		</div>
+	</div>
+</div>

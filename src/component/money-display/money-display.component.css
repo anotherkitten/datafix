@@ -1,0 +1,38 @@
+.money-display {
+	position: relative;
+	margin: 32px;
+}
+
+.income {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	width: 100%;
+	text-align: center;
+
+	animation: 3s ease 0s 1 income;
+	opacity: 0;
+	user-select: none;
+}
+
+@keyframes income {
+	0% {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+	20% {
+		opacity: .8;
+	}
+	50% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(160px);
+	}
+}

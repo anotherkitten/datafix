@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+	/* most colors from https://lospec.com/palette-list/nopal-12 */
+	--bg-light: #e2e4df;
+	--bg: #dde1d5;
+	--bg-dark: #c5cfc4;
+	--bg-darker: #a8b5ae;
+	--black: #92929c;
+	--black-dark: #57575d;
+	--red-lightest: #ffeced;
+	--red-light: #fbd4d2;
+	--red: #f1b4b4;
+	--red-dark: #cca3a3;
+	--red-darker: #573939;
+	--green-light: #f1eab6;
+	--green: #e4dba0;
+	--green-dark: #cac18a;
+	--green-darkest: #aba47b;
+}
+
+body {
+	color: var(--black);
+	background-color: var(--bg-light);
+	padding: 0;
+	margin: 0;
+}
+
+* {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}

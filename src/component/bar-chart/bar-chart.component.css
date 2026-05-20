@@ -1,0 +1,125 @@
+.bar-chart {
+	position: relative;
+	border-bottom: 2px solid var(--black);
+	height: 300px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.timer {
+	position: relative;
+	box-sizing: content-box;
+	bottom: 200px;
+	width: 200px;
+	height: 0px;
+	border-radius: 4px;
+	border: 2px solid var(--bg-dark);
+
+	transition: opacity 1.5s ease .1s;
+	opacity: 0;
+	
+	.timer-bar {
+		position: absolute;
+		transform-origin: left;
+		left: -2px;
+		top: -2px;
+		width: 200px;
+		height: 0px;
+		border-radius: 4px;
+		
+		border: 2px solid var(--bg-darker);
+	}
+
+	.timer-bar.show-12 {
+		animation: 12s linear 0s 1 timer-bar;
+	}
+
+	.timer-bar.show-11 {
+		animation: 11s linear 0s 1 timer-bar;
+	}
+
+	.timer-bar.show-10 {
+		animation: 10s linear 0s 1 timer-bar;
+	}
+
+	.timer-bar.show-9 {
+		animation: 9s linear 0s 1 timer-bar;
+	}
+
+	.timer-bar.show-8 {
+		animation: 8s linear 0s 1 timer-bar;
+	}
+
+	.timer-bar.show-7 {
+		animation: 7s linear 0s 1 timer-bar;
+	}
+
+	.timer-bar.show-6 {
+		animation: 6s linear 0s 1 timer-bar;
+	}
+
+	.timer-bar.show-5 {
+		animation: 5s linear 0s 1 timer-bar;
+	}
+
+	.timer-bar.show-4 {
+		animation: 4s linear 0s 1 timer-bar;
+	}
+
+	.timer-bar.show-3 {
+		animation: 3s linear 0s 1 timer-bar;
+	}
+
+	.timer-bar.show-2s {
+		animation: 2s linear 0s 1 timer-bar;
+	}
+}
+
+.timer.show {
+	opacity: 1;
+}
+
+.bar {
+	position: absolute;
+	bottom: 0;
+
+	background-color: var(--red);
+	border: none;
+	transition: background-color .15s, left .25s, height .75s;
+	margin-left: 8px;
+
+	transform-origin: bottom;
+	animation: .75s ease 0s 1 grow;
+	cursor: pointer;
+}
+
+.bar:hover {
+	background-color: var(--red-light);
+}
+
+.bar-chart.sorted .bar {
+	transition: background-color .35s ease .35s, left .25s, height .75s ease .75s, opacity .45s ease 1s;
+	background-color: var(--green-dark);
+	height: 0 !important;
+	opacity: 0;
+}
+
+@keyframes timer-bar {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 200px;
+	}
+}
+
+@keyframes grow {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}

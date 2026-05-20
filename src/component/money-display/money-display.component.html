@@ -1,0 +1,8 @@
+<div class="money-display">
+	<div>
+		Money: {{display_money}}$
+	</div>
+	<div class="income" *ngFor="let income of income_displays">
+		+{{income.amount}}$
+	</div>
+</div>

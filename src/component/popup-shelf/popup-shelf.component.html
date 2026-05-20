@@ -1,0 +1,10 @@
+<div class="popup-container">
+	<div class="popup-card" *ngFor="let popup of getPopups()" [class.error]="popup.type === 'error'" [style.opacity]="popup.opacity">
+		<button class="popup-close" (click)="closePopup(popup)">
+			X
+		</button>
+		<div>
+			{{popup.text}}
+		</div>
+	</div>
+</div>
